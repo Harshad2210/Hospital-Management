@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form class="form-horizontal" action='' method="POST">
+  <fieldset>
+    <div id="legend">
+      <legend class="">Staff Registration </legend>
+    </div>
+    <div class="control-group">
+        <p class="text-left">Are you a patient? if yes then pls 
+          <a href="/register" id="signup">Register here</a></p>
+    </div>
+    {% from "includes/formhelpers.html" import render_field %}
+    
+    <div class="control-group">
+      <!-- Name -->
+      
+      <div class="controls">
+        {{render_field(form.name,class="form-control col-sm-6")}}
+        <p> </p>
+        <!--<p class="help-block">Enter your name</p><-->
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- E-mail -->
+      
+      <div class="controls">
+        {{render_field(form.email,class="form-control col-sm-6")}}
+        <p class="help-block">Please provide your E-mail</p>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <!-- Username -->
+      
+      <div class="controls">
+        {{render_field(form.username,class="form-control col-sm-6")}}
+        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+      </div>
+
+    </div>
+
+    <div class="control-group">
+      <!-- Profession -->
+      
+      <div class="controls">
+        {{render_field(form.profession,class="form-control col-sm-6")}}
+        <p class="help-block">Enter your profession here</p>
+      </div>
+    </div>
+ 
+    
+ 
+    <div class="control-group">
+      <!-- Password-->
+      
+      <div class="controls">
+        {{render_field(form.password,class="form-control col-sm-6")}}
+       <!-- <p class="help-block">Password should be at least 4 characters</p> <-->
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      
+      <div class="controls">
+        {{render_field(form.confirm,class="form-control col-sm-6")}}
+        <p class="help-block">Please confirm your password,should be same</p>
+      </div>
+    </div>
+  
+
+
+
+   <div class="control-group">
+    
+      <div class="controls">
+       <input type="submit" class="btn btn-primary" value="Register">
+      </div>
+    </div> 
+
+  </fieldset>
+</form>
+
+{% endblock %}
